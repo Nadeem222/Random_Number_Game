@@ -6,56 +6,60 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-        #main {
+        .main {
             display: flex;
-            flex-direction: row;
-            width: fit-content;
-
-            border: solid gold;
-        }
-        #img {
-
-            border: solid blue;
-        }
-        #form {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             flex-direction: column;
-            border: solid brown;
-            text-align: center;
-            color: brown;
-            
+            justify-content: center;
+        }
+        .img {
+            display: flex;
+            align-items: stretch;
+            object-fit: contain;
+        }
+        .context {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        h1 {
+            color: rgb(43, 252, 1);
         }
         #button1 {
             border-radius: 22px;
-            width: 80px;
-            padding: 10px;
-            margin: 10px;
-            color: blue;
-            color-scheme: yellow;
-            
-
+            background-color: rgb(255, 0, 0);
+            padding: 10px 25px;
+            margin: 4px 2px;
+            font-size: 15px;
+        }
+        input [type=number] {
+            width: 100%;
+            padding: 10px 25px;
+            margin: 8px 0px;
+            border: 2px solid red;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
-    <div id="main">
-        <div id="img"><img src="./img/image.jpg" alt=""></div>
-        <div id="form">
+    <div class="main">
+        <div class="img"><img src="./img/image.jpg" alt="" style="width: 1500px;"></div>
+        <div class="context"> 
+        
     <form onsubmit="NumCheck();return false">
-    <b>"ENTER YOUR GUESS NUMBER : "</b>
+    <!-- <b>"ENTER YOUR GUESS NUMBER : "</b> -->
     <br>
 
     <input type="number" min="0" max="10" id="num1">
     <br>
 
-    <button type="submit" id="button1">Play</button>
+    <b><button type="submit" id="button1">Play</button></b>
 
     </form>
-</div>
-</div>
+
+
     <br>
     <hr>
     <h1 id="ans">   </h1>
@@ -79,5 +83,7 @@
             }
         }
     </script>
+    </div>
+    </div>
 </body>
 </html>
