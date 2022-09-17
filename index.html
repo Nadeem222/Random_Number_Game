@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #main {
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+
+            border: solid gold;
+        }
+        #img {
+
+            border: solid blue;
+        }
+        #form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: solid brown;
+            text-align: center;
+            color: brown;
+            
+        }
+        #button1 {
+            border-radius: 22px;
+            width: 80px;
+            padding: 10px;
+            margin: 10px;
+            color: blue;
+            color-scheme: yellow;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="img"><img src="./img/image.jpg" alt=""></div>
+        <div id="form">
+    <form onsubmit="NumCheck();return false">
+    <b>"ENTER YOUR GUESS NUMBER : "</b>
+    <br>
+
+    <input type="number" min="0" max="10" id="num1">
+    <br>
+
+    <button type="submit" id="button1">Play</button>
+
+    </form>
+</div>
+</div>
+    <br>
+    <hr>
+    <h1 id="ans">   </h1>
+
+
+
+    <script>
+        function NumCheck() {
+
+            let num1 = +document.querySelector("#num1").value;
+
+            let rand = Math.floor(Math.random() * 11);
+
+            if (num1 === rand) {
+
+                document.querySelector("#ans").innerHTML = ` Random Number ${rand}, Congrats you Guess the right number.`;
+
+            } else {
+
+                document.querySelector("#ans").innerHTML = `Random Number ${rand}, Sorry Tyr Agin Later.`;
+            }
+        }
+    </script>
+</body>
+</html>
